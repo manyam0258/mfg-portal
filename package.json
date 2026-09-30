@@ -4,29 +4,36 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build --base=/assets/mfg_portal/frontend/ && yarn copy-html-entry",
-    "preview": "vite preview",
-    "copy-html-entry": "cp ../mfg_portal/public/frontend/index.html ../mfg_portal/www/mfg_portal.html"
+    "dev": "cd frontend && vite",
+    "build": "cd frontend && vite build --base=/assets/mfg_portal/frontend/ && cd .. && yarn copy-html-entry",
+    "preview": "cd frontend && vite preview",
+    "copy-html-entry": "mkdir -p mfg_portal/www && cp mfg_portal/public/frontend/index.html mfg_portal/www/mfg_portal.html"
   },
   "dependencies": {
     "clsx": "^2.1.1",
     "frappe-react-sdk": "^1.17.1",
-    "lucide-react": "^1.16.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "tailwind-merge": "^3.0.0",
-    "xlsx": "^0.18.5"
+    "lucide-react": "^1.48.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "tailwind-merge": "^3.7.0",
+    "xlsx": "^0.18.5",
+    "date-fns": "^4.4.0",
+    "framer-motion": "^13.4.5",
+    "react-hot-toast": "^2.6.1",
+    "react-is": "^19.3.0",
+    "react-router-dom": "^7.18.4",
+    "recharts": "^3.10.1"
   },
   "devDependencies": {
-    "@types/node": "^24.0.0",
-    "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0",
-    "@vitejs/plugin-react": "^4.3.0",
-    "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.49",
-    "tailwindcss": "^3.4.17",
-    "typescript": "^5.7.0",
-    "vite": "^6.0.0"
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "autoprefixer": "^10.6.1",
+    "postcss": "^8.5.28",
+    "tailwindcss": "^3.4.19",
+    "typescript": "~6.0.2",
+    "vite": "^8.3.0",
+    "oxlint": "^1.81.0"
   }
 }
