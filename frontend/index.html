@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/assets/mfg_portal/frontend/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MFG Portal</title>
+    <meta name="description" content="Manufacturing Portal for ERPNext v15 – Work Orders, BOMs, Job Cards, Stock and P&L" />
+    <!-- No-flash theme script: reads localStorage before React hydrates -->
+    <script>
+      (function() {
+        try {
+          var stored = localStorage.getItem('mfg-theme');
+          var resolved = stored === 'light' ? 'light'
+            : stored === 'dark'  ? 'dark'
+            : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          document.documentElement.classList.add(resolved);
+        } catch(e) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      window.csrf_token = '{{ frappe.session.csrf_token }}';
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
